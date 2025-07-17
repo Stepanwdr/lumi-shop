@@ -43,4 +43,13 @@ export const GlobalStyles = createGlobalStyle`
     background: var(--color-bg);
     color: var(--color-text);
   }
+  
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    @media (min-width: 768px) {
+       padding: 0 40px; 
+    }  
+  }
 `;

@@ -13,7 +13,9 @@ export default function RootLayout({
     <body>
     <Providers>
       <GlobalStyles />
-      {children}
+      <main className="container">
+        {children}
+      </main>
     </Providers>
     </body>
     </html>
