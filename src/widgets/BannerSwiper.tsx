@@ -29,7 +29,9 @@ const Wrapper = styled.section`
   width: 100%;
   max-width: 72rem;
   margin: 0 auto;
-  height: 100px;
+  padding: 0 1rem;
+  height: 100%;
+  max-height: 400px;
 `;
 
 const SlideLink = styled.a`
@@ -79,7 +81,6 @@ export default function BannerSwiper() {
   return (
     <Wrapper>
       <Swiper
-        height={150}
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 5000 }}
         pagination={{ clickable: true }}

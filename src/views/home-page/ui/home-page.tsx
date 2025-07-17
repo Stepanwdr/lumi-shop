@@ -3,6 +3,7 @@ import { ThemeToggle } from "@/shared/ui/Toggle";
 import { SearchBar } from "@/widgets/SearchBar";
 import { TabBar } from "@/shared/ui/TabBar";
 import { ProductCard } from "@/widgets/ProductCard";
+import BannerSwiper from "@/widgets/BannerSwiper";
 
 const mock = Array.from({ length: 24 }, (_, i) => ({
   id: i.toString(),
@@ -42,9 +43,9 @@ export  const  HomePage=()=> {
         <h1>LuMi</h1>
         <SearchBar />
         <ThemeToggle />
-        {/*<BannerSwiper />*/}
-      </Header>
 
+      </Header>
+      <BannerSwiper />
       <Grid>
         {mock.map((p) => (
           <ProductCard key={p.id} {...p} />
