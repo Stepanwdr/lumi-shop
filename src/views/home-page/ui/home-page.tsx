@@ -4,7 +4,6 @@ import { SearchBar } from "@/widgets/SearchBar";
 import { TabBar } from "@/shared/ui/TabBar";
 import { ProductCard } from "@/widgets/ProductCard";
 import RootLayout from "@/shared/ui/layout";
-import BannerSwiper from "@/widgets/BannerSwiper";
 
 const mock = Array.from({ length: 24 }, (_, i) => ({
   id: i.toString(),
@@ -39,7 +38,7 @@ const Header = styled.header`
 
 export  const  HomePage=()=> {
   return (
-    <RootLayout>
+    <>
       <Header>
         <h1>LuMi</h1>
         <SearchBar />
@@ -53,6 +52,6 @@ export  const  HomePage=()=> {
         ))}
       </Grid>
       <TabBar />
-    </RootLayout>
+    </>
   );
 }
