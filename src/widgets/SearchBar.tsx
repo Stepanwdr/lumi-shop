@@ -16,13 +16,14 @@ export function SearchBar() {
 
 const Wrapper = styled.div`
   position: relative;
-  margin: 12px 16px;
+  width: 100%;
+  max-width: 1000px;
 `;
 
 const Icon = styled(Search)`
   position: absolute;
   top: 50%;
-  left: 16px;
+  left: 14px;
   transform: translateY(-50%);
   color: var(--color-text-muted);
 `;

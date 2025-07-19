@@ -2,17 +2,18 @@
 const nextConfig = {
   images: {
     remotePatterns: [
+      { protocol: 'https', hostname: 'picsum.photos' },
+      { protocol: 'https', hostname: 'fakeapi.platzi' },
+      { protocol: 'https', hostname: 'i.imgur.com' },
       {
         protocol: 'https',
-        hostname: 'picsum.photos',
+        hostname: 'api.escuelajs.co',
+        pathname: '/api/v1/products/**',
       },
     ],
   },
   async redirects() {
-    return [
-      // убираем строки с source: '/' и '/en'
-      // пока оставим пустой массив
-    ];
+    return [];
   },
 };
 

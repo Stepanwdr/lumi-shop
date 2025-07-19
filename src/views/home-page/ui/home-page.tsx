@@ -1,15 +1,17 @@
+"use client"
+
 import styled from 'styled-components';
-import { ThemeToggle } from "@/shared/ui/Toggle";
-import { SearchBar } from "@/widgets/SearchBar";
 import { TabBar } from "@/shared/ui/TabBar";
 import { ProductCard } from "@/widgets/ProductCard";
 import BannerSwiper from "@/widgets/BannerSwiper";
+import { useRouter } from "next/navigation";
+import { ProductStorySlider } from "@/widgets/ProductStorySlider";
 
 const mock = Array.from({ length: 24 }, (_, i) => ({
   id: i.toString(),
   name: `LuMi Product ${i + 1}`,
   price: 29.9 + i,
-  image: `https://picsum.photos/seed/${i}/400`,
+  image: `/logo.png`,
 }));
 
 const Grid = styled.div`
@@ -24,34 +26,25 @@ const Grid = styled.div`
   }  
 `;
 
-const Header = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  h1 {
-    font-weight: 700;
-    font-size: 24px;
-    color: var(--color-primary);
-  }
-`;
-
 export  const  HomePage=()=> {
+  const router = useRouter()
   return (
-    <>
-      <Header>
-        <h1>LuMi</h1>
-        <SearchBar />
-        <ThemeToggle />
-
-      </Header>
+    <Wrapper>
       <BannerSwiper />
+      <ProductStorySlider/>
       <Grid>
         {mock.map((p) => (
-          <ProductCard key={p.id} {...p} />
+          <ProductCard key={p.id} {...p} onClick={(id)=>router.push(`items/${id}`)} />
         ))}
       </Grid>
       <TabBar />
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper =styled.div`
+     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+;
+`

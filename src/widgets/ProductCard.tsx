@@ -7,11 +7,13 @@ type Props = {
   image: string;
   name: string;
   price: number;
+  id:string;
+  onClick : (id: number) => void;
 };
 
-export const ProductCard=({ name, price, image }: Props)=> {
+export const ProductCard=({ name, price, image, onClick,id }: Props)=> {
   return (
-    <Card>
+    <Card onClick={()=>onClick(+id)}>
       <ImgWrapper>
         <Image src={image} alt={name} fill style={{ objectFit: 'cover' }} />
       </ImgWrapper>

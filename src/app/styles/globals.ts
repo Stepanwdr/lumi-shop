@@ -52,4 +52,15 @@ export const GlobalStyles = createGlobalStyle`
        padding: 0 40px; 
     }  
   }
+  
+  .header {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem;
+      gap: 1rem;
+      align-items: center;
+      .log-in-icon {
+        cursor: pointer;    
+      }
+  }
 `;
