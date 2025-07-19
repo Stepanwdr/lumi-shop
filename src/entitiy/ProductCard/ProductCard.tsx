@@ -20,7 +20,7 @@ export const ProductCard=({  onClick,...item }: Props)=> {
         <Price>{item.price.amount} {item.price.currency}</Price>
         <Title>{item.name}</Title>
         <AddButton>
-          <ShoppingCart /> Գնել
+          <ShoppingCart width={15} /> Գնել
         </AddButton>
       </Content>
     </Card>
@@ -94,4 +94,5 @@ const AddButton =styled.button`
     justify-content: center;
     font-weight: bold;
     color: white;
+    gap: 1rem;
 `
