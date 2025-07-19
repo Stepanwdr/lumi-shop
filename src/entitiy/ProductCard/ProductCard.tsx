@@ -5,19 +5,18 @@ import Image from 'next/image';
 import {BaseItem} from "@/shared/types/Item";
 
 type Props = {
-  item:BaseItem
   onClick : (id: number) => void;
-};
+} & BaseItem;
 
 export const ProductCard=({  onClick,...item }: Props)=> {
   return (
-    <Card onClick={()=>onClick(+item.item.id)}>
+    <Card onClick={()=>onClick(+item.id)}>
       <ImgWrapper>
-        <Image src={'/stories/story_1.png'} alt={item.item.images[0].alt || ''} fill style={{ objectFit: 'cover' }} />
+        <Image src={item.images[0].url.replace('.','')} alt={item.images[0].alt || ''} fill style={{ objectFit: 'cover' }} />
       </ImgWrapper>
       <Content>
-        <Title>{item.item.name}</Title>
-        <Price>${item.item.price.amount}</Price>
+        <Title>{item.name}</Title>
+        <Price>${item.price.amount}</Price>
       </Content>
     </Card>
   );

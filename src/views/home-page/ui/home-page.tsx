@@ -44,7 +44,7 @@ export  const  HomePage=()=> {
 }
 
 const Wrapper =styled.div`
-     display: flex;
+    display: flex;
     flex-direction: column;
     gap: 1rem;
 ;

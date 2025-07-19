@@ -8,7 +8,7 @@ export const mockItems: BaseItem[] = [
     description: 'Уютный свитшот из органического хлопка с минималистичным дизайном.',
     price: { amount: 3490, currency: 'RUB' },
     images: [
-      { url: 'https://cdn.site.com/wb/1.jpg', alt: 'Женский свитшот' },
+      { url: './stories/story_1.png', alt: 'Женский свитшот' },
       { url: 'https://cdn.site.com/wb/premium.jpg', alt: 'Деталь свитшота' }
     ],
     weightKg: 0.5,
@@ -24,7 +24,7 @@ export const mockItems: BaseItem[] = [
     description: 'Лёгкие кроссовки для бега и повседневной носки. Дышащий верх и амортизация.',
     price: { amount: 5990, currency: 'RUB' },
     images: [
-      { url: 'https://cdn.site.com/wb/2.jpg', alt: 'Кроссовки Urban Runner' }
+      { url: './stories/story_2.png', alt: 'Кроссовки Urban Runner' }
     ],
     weightKg: 0.8,
     inStock: true,
@@ -39,7 +39,7 @@ export const mockItems: BaseItem[] = [
     description: '24 ярких цвета, водорастворимые, безопасные для детей от 3 лет.',
     price: { amount: 490, currency: 'RUB' },
     images: [
-      { url: 'https://cdn.site.com/wb/3.jpg', alt: 'Фломастеры Rainbow' }
+      { url: './stories/story_3.png', alt: 'Фломастеры Rainbow' }
     ],
     weightKg: 0.15,
     inStock: false,
@@ -54,7 +54,7 @@ export const mockItems: BaseItem[] = [
     description: '100% натуральное эфирное масло для ароматерапии и ухода за кожей.',
     price: { amount: 790, currency: 'RUB' },
     images: [
-      { url: 'https://cdn.site.com/wb/4.jpg', alt: 'Флакон эфирного масла' }
+      { url: './stories/story_4.png', alt: 'Флакон эфирного масла' }
     ],
     weightKg: 0.05,
     inStock: true,
@@ -69,7 +69,7 @@ export const mockItems: BaseItem[] = [
     description: 'TWS-наушники с активным шумоподавлением и 30 часами автономной работы.',
     price: { amount: 4990, currency: 'RUB' },
     images: [
-      { url: 'https://cdn.site.com/wb/5.jpg', alt: 'Наушники SoundWave' }
+      { url: './stories/story_5.png', alt: 'Наушники SoundWave' }
     ],
     weightKg: 0.12,
     inStock: true,
@@ -84,7 +84,7 @@ export const mockItems: BaseItem[] = [
     description: 'Профессиональный коврик для йоги из TPE-материала, 6 мм толщиной.',
     price: { amount: 2190, currency: 'RUB' },
     images: [
-      { url: 'https://cdn.site.com/wb/6.jpg', alt: 'Йога-мат' }
+      { url: './stories/story_6.png', alt: 'Йога-мат' }
     ],
     weightKg: 1.0,
     inStock: true,
@@ -99,7 +99,7 @@ export const mockItems: BaseItem[] = [
     description: 'Ручная работа, без сахара, 250 гр. Приготовлено в Алтайском крае.',
     price: { amount: 390, currency: 'RUB' },
     images: [
-      { url: 'https://cdn.site.com/wb/7.jpg', alt: 'Банка варенья' }
+      { url: './stories/story_1.png', alt: 'Банка варенья' }
     ],
     weightKg: 0.25,
     inStock: true,

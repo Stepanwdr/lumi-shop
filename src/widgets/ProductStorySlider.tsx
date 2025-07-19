@@ -6,19 +6,12 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import styled, { keyframes } from "styled-components";
 import {BaseItem} from "@/shared/types/Item";
-import {mockItems} from "@/entitiy/ProductCard/mock";
+import { mockItems } from "@/entitiy/ProductCard/mock";
 
-const products = [
-  { id: 1, name: "Product A", image: "/stories/story_1.png" },
-  { id: 2, name: "Product B", image: "/stories/story_2.png" },
-  { id: 3, name: "Product C", image: "/stories/story_3.png" },
-  { id: 4, name: "Product C", image: "/stories/story_4.png" },
-  { id: 5, name: "Product C", image: "/stories/story_5.png" },
-  { id: 6, name: "Product C", image: "/stories/story_6.png" },
-];
 interface Props{
   setStoryItem:Dispatch<SetStateAction<BaseItem | null>>
 }
+
 export const ProductStorySlider: React.FC<Props> = ({setStoryItem}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<any>(null);
@@ -37,7 +30,7 @@ export const ProductStorySlider: React.FC<Props> = ({setStoryItem}) => {
           <SwiperSlide key={product.id} onClick={()=>setStoryItem(product)}>
             <StoryWrapper>
               <BorderWrapper>
-                <StoryImage src={'/stories/story.png'} alt={product.name} />
+                <StoryImage src={product.images[0].url} alt={product.name} />
                 {index === activeIndex && <CircularProgress $active={index === activeIndex} />}
               </BorderWrapper>
             </StoryWrapper>
@@ -47,10 +40,6 @@ export const ProductStorySlider: React.FC<Props> = ({setStoryItem}) => {
     </StoryWrapper>
   );
 };
-const progress = keyframes`
-    from { transform: scaleX(0); }
-    to { transform: scaleX(1); }
-`;
 
 const gradientAnimation = keyframes`
     0% { background-position: 0 50%; }
@@ -64,6 +53,7 @@ const StoryWrapper = styled.div`
     width: 100%;
     padding-left: 0.5rem;
     gap: 1rem;
+    
     .swiper-wrapper {
      gap: 1rem;
     }
