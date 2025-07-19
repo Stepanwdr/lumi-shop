@@ -62,8 +62,8 @@ const StoryWrapper = styled.div`
 `;
 
 const BorderWrapper = styled.div`
-    width: 84px;
-    height: 84px;
+    min-width: 84px;
+    min-height: 84px;
     border-radius: 50%;
     padding: 3px;
     background: linear-gradient(270deg, #ff7a18, #af002d, #319197);
