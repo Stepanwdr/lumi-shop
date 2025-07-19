@@ -133,7 +133,7 @@ const Progress = styled.div<{ fill: number }>`
   width: ${({ fill }) => fill}%;
   transition: width 50ms linear;
     background: conic-gradient(
-      #ff49a0,
+      var(--color-primary),
       100%,
       transparent 0%
     );

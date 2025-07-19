@@ -25,7 +25,7 @@ export default function RootLayout({
               src="/logo.png"
               alt="LUMI logo"
               width={'70'}
-              height={'35'}
+              height={'18'}
               className="logo"
               priority
             />

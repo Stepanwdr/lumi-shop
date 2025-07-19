@@ -1,7 +1,7 @@
 // ------------------ 1. Базовые примитивы ------------------
 export type UUID = string;           // UUID v4
 export type ISODate = string;        // 2024-12-31T23:59:59.999Z
-export type Currency = 'USD' | 'EUR' | 'RUB';
+export type Currency = 'USD' | 'EUR' | 'AMD';
 
 
 // 1. Верхнеуровневые категории Wildberries
@@ -50,7 +50,7 @@ const Item: BaseItem = {
   name: 'Wieldberry Premium',
   category: 'beauty',
   description: 'Hand-picked wild berries from Altai mountains',
-  price: { amount: 299.99, currency: 'RUB' },
+  price: { amount: 299.99, currency: 'AMD' },
   images: [
     { url: 'https://cdn.site.com/wb/premium.jpg', alt: 'Juicy dark-blue wieldberry' }
   ],

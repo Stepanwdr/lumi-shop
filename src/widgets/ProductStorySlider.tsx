@@ -66,7 +66,7 @@ const BorderWrapper = styled.div`
   height: 84px;
   border-radius: 50%;
   padding: 3px;
-  background: linear-gradient(270deg, white, #af002d, #319197);
+  background: linear-gradient(270deg, white, var(--color-primary), #319197);
   background-size: 600% 600%;
   animation: ${gradientAnimation} 6s ease infinite;
   display: flex;
@@ -81,7 +81,7 @@ const StoryImage = styled.img`
   object-fit: cover;
   background: #fff;
   z-index: 2;
-  border: 3px solid pink;
+  border: 3px solid white;
 `;
 
 const CircularProgress = styled.div<{ $active: boolean }>`
@@ -92,7 +92,7 @@ const CircularProgress = styled.div<{ $active: boolean }>`
   height: 84px;
   border-radius: 50%;
   background: conic-gradient(
-    #ff49a0 ${({ $active }) => ($active ? '100%' : '0%')},
+    var(--color-primary) ${({ $active }) => ($active ? '100%' : '0%')},
     transparent 0%
   );
   mask: radial-gradient(farthest-side, transparent 71%, black 72%);
