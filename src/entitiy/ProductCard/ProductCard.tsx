@@ -2,24 +2,22 @@
 
 import styled from 'styled-components';
 import Image from 'next/image';
+import {BaseItem} from "@/shared/types/Item";
 
 type Props = {
-  image: string;
-  name: string;
-  price: number;
-  id:string;
+  item:BaseItem
   onClick : (id: number) => void;
 };
 
-export const ProductCard=({ name, price, image, onClick,id }: Props)=> {
+export const ProductCard=({  onClick,...item }: Props)=> {
   return (
-    <Card onClick={()=>onClick(+id)}>
+    <Card onClick={()=>onClick(+item.item.id)}>
       <ImgWrapper>
-        <Image src={image} alt={name} fill style={{ objectFit: 'cover' }} />
+        <Image src={'/stories/story_1.png'} alt={item.item.images[0].alt || ''} fill style={{ objectFit: 'cover' }} />
       </ImgWrapper>
       <Content>
-        <Title>{name}</Title>
-        <Price>${price}</Price>
+        <Title>{item.item.name}</Title>
+        <Price>${item.item.price.amount}</Price>
       </Content>
     </Card>
   );

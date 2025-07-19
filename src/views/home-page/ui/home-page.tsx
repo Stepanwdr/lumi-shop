@@ -2,17 +2,14 @@
 
 import styled from 'styled-components';
 import { TabBar } from "@/shared/ui/TabBar";
-import { ProductCard } from "@/widgets/ProductCard";
 import BannerSwiper from "@/widgets/BannerSwiper";
 import { useRouter } from "next/navigation";
 import { ProductStorySlider } from "@/widgets/ProductStorySlider";
-
-const mock = Array.from({ length: 24 }, (_, i) => ({
-  id: i.toString(),
-  name: `LuMi Product ${i + 1}`,
-  price: 29.9 + i,
-  image: `/logo.png`,
-}));
+import {ProductStoryPreview} from "@/widgets/ProductStoryPreview";
+import {ProductCard} from "@/entitiy/ProductCard/ProductCard";
+import {mockItems} from "@/entitiy/ProductCard/mock";
+import {useState} from "react";
+import {BaseItem} from "@/shared/types/Item";
 
 const Grid = styled.div`
   display: grid;
@@ -28,16 +25,20 @@ const Grid = styled.div`
 
 export  const  HomePage=()=> {
   const router = useRouter()
+
+  const [storyItem,setStoryItem]=useState<BaseItem | null>( null);
+
   return (
     <Wrapper>
       <BannerSwiper />
-      <ProductStorySlider/>
+      <ProductStorySlider setStoryItem={setStoryItem}/>
       <Grid>
-        {mock.map((p) => (
-          <ProductCard key={p.id} {...p} onClick={(id)=>router.push(`items/${id}`)} />
+        {mockItems.map((p) => (
+          <ProductCard item={p} key={p.id} {...p} onClick={(id)=>router.push(`items/${id}`)} />
         ))}
       </Grid>
       <TabBar />
+      {storyItem && <ProductStoryPreview product={storyItem} onClose={() => setStoryItem(null)}/>}
     </Wrapper>
   );
 }

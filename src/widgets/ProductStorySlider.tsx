@@ -1,10 +1,12 @@
 'use client'
 
-import React, { useRef, useState } from "react";
+import React, {Dispatch, SetStateAction, useRef, useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import styled, { keyframes } from "styled-components";
+import {BaseItem} from "@/shared/types/Item";
+import {mockItems} from "@/entitiy/ProductCard/mock";
 
 const products = [
   { id: 1, name: "Product A", image: "/stories/story_1.png" },
@@ -14,8 +16,10 @@ const products = [
   { id: 5, name: "Product C", image: "/stories/story_5.png" },
   { id: 6, name: "Product C", image: "/stories/story_6.png" },
 ];
-
-export const ProductStorySlider: React.FC = () => {
+interface Props{
+  setStoryItem:Dispatch<SetStateAction<BaseItem | null>>
+}
+export const ProductStorySlider: React.FC<Props> = ({setStoryItem}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<any>(null);
 
@@ -29,12 +33,12 @@ export const ProductStorySlider: React.FC = () => {
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         onBeforeInit={(swiper) => (swiperRef.current = swiper)}
       >
-        {products.map((product, index) => (
-          <SwiperSlide key={product.id}>
+        {mockItems.map((product, index) => (
+          <SwiperSlide key={product.id} onClick={()=>setStoryItem(product)}>
             <StoryWrapper>
               <BorderWrapper>
-                <StoryImage src={product.image} alt={product.name} />
-                {index === activeIndex && <ProgressBar />}
+                <StoryImage src={'/stories/story.png'} alt={product.name} />
+                {index === activeIndex && <CircularProgress $active={index === activeIndex} />}
               </BorderWrapper>
             </StoryWrapper>
           </SwiperSlide>
@@ -49,9 +53,9 @@ const progress = keyframes`
 `;
 
 const gradientAnimation = keyframes`
-    0% { background-position: 0% 50%; }
+    0% { background-position: 0 50%; }
     50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    100% { background-position: 0 50%; }
 `;
 
 const StoryWrapper = styled.div`
@@ -59,41 +63,49 @@ const StoryWrapper = styled.div`
     align-items: center;
     width: 100%;
     padding-left: 0.5rem;
+    gap: 1rem;
+    .swiper-wrapper {
+     gap: 1rem;
+    }
 `;
 
+
 const BorderWrapper = styled.div`
-    min-width: 84px;
-    min-height: 84px;
-    border-radius: 50%;
-    padding: 3px;
-    background: linear-gradient(270deg, #ff7a18, #af002d, #319197);
-    background-size: 600% 600%;
-    animation: ${gradientAnimation} 6s ease infinite;
+  position: relative;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(270deg, white, #af002d, #319197);
+  background-size: 600% 600%;
+  animation: ${gradientAnimation} 6s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const StoryImage = styled.img`
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #fff;
-    border: 3px dotted white;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  z-index: 2;
+  border: 3px solid pink;
 `;
 
-const ProgressBar = styled.div`
-    width: 100%;
-    height: 3px;
-    background: #ccc;
-    margin-top: 6px;
-    overflow: hidden;
-    border-radius: 2px;
-
-    &::after {
-        content: '';
-        display: block;
-        height: 100%;
-        background: linear-gradient(to right, #ff7a18, #af002d);
-        animation: ${progress} 5s linear forwards;
-        transform-origin: left;
-    }
+const CircularProgress = styled.div<{ $active: boolean }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ff49a0 ${({ $active }) => ($active ? '100%' : '0%')},
+    transparent 0%
+  );
+  mask: radial-gradient(farthest-side, transparent 71%, black 72%);
+  z-index: 1;
+  transition: background 3s linear;
 `;

@@ -5,11 +5,14 @@ import {TanStackProvider} from "@/application/tan-stack-provider";
 import Image from "next/image";
 import {SearchBar} from "@/widgets/SearchBar";
 import { LogIn }  from 'lucide-react'
+
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
     <body>
