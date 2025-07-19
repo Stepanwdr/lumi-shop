@@ -12,7 +12,7 @@ type Props = {
 export const ProductCard=({  onClick,...item }: Props)=> {
   return (
     <Card onClick={()=>onClick(+item.id)}>
-      <Heart color={'#ff49a0'} fill={'white'} className={'favourite-icon'} />
+      <Heart color={'var(--color-primary)'} fill={'white'} className={'favourite-icon'} />
       <ImgWrapper>
         <Image src={item.images[0].url.replace('.','')} alt={item.images[0].alt || ''} fill style={{ objectFit: 'cover' }} />
       </ImgWrapper>
