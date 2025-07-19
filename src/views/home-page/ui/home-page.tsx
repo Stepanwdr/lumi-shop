@@ -34,7 +34,7 @@ export  const  HomePage=()=> {
       <ProductStorySlider setStoryItem={setStoryItem}/>
       <Grid>
         {mockItems.map((p) => (
-          <ProductCard item={p} key={p.id} {...p} onClick={(id)=>router.push(`items/${id}`)} />
+          <ProductCard  key={p.id} {...p} onClick={(id)=>router.push(`items/${id}`)} />
         ))}
       </Grid>
       <TabBar />
