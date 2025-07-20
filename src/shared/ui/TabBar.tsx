@@ -36,14 +36,15 @@ const Tab = styled.button<{ $active?: boolean }>`
 const Count =styled.span`
 background: var(--color-primary);
 color:white;
- border-radius: 50%;
-  min-width: 1.25rem;
-  min-height: 1.25rem;
+ border-radius: 40%;
+  min-width: 1rem;
+  min-height: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     right: -.5rem;
+    font-size: .75rem;
 `
 
 const tabs = [
