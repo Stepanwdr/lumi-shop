@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 import { Home, Search, ShoppingCart, User } from 'lucide-react';
 import { useRouter, usePathname } from 'next/navigation';
+import {useBasketStore} from "@/features/ProductCard/hook/useBasketStore";
 
 const Nav = styled.nav`
   position: fixed;
@@ -29,7 +30,21 @@ const Tab = styled.button<{ $active?: boolean }>`
   border: none;
   color: ${(p) => (p.$active ? 'var(--color-primary)' : 'var(--color-text-muted)')};
   transition: color 0.2s;
+    position: relative;
 `;
+
+const Count =styled.span`
+background: var(--color-primary);
+color:white;
+ border-radius: 50%;
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -.5rem;
+`
 
 const tabs = [
   { icon: Home, label: 'Home', path: '/' },
@@ -41,7 +56,8 @@ const tabs = [
 export function TabBar() {
   const pathname = usePathname();
   const router = useRouter();
-
+  const { items }=useBasketStore()
+  console.log(items)
   return (
     <Nav>
       {tabs.map(({ icon: Icon, label, path }) => (
@@ -52,6 +68,7 @@ export function TabBar() {
         >
           <Icon size={24} />
           <span style={{ fontSize: 12 }}>{label}</span>
+          {label ==='Cart' && !!items.length && <Count>{items.length}</Count>}
         </Tab>
       ))}
     </Nav>

@@ -39,6 +39,8 @@ export interface BaseItem {
   weightKg: number;    // 0.25
   inStock: boolean;
   category:  CATEGORIES;
+  rating: number;
+  discounted?: number;
   createdAt: ISODate;
   updatedAt: ISODate;
 }

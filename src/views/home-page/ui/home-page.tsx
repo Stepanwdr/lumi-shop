@@ -10,6 +10,7 @@ import {mockItems} from "@/entitiy/ProductCard/mock";
 import React, {useState} from "react";
 import {BaseItem, CATEGORIES} from "@/shared/types/Item";
 import dynamic from "next/dynamic";
+import {useBasketStore} from "@/features/ProductCard/hook/useBasketStore";
 
 interface TabProps {
   $active?: boolean;
@@ -38,6 +39,11 @@ export  const  HomePage=()=> {
   const [storyItem,setStoryItem]=useState<BaseItem | null>( null);
   const [activeTab, setActiveTab] = useState('all');
   const [activeCategory, setActiveCategory] = useState<CATEGORIES | 'all'>('all');
+  const  {addItem}=useBasketStore()
+
+  const addToCard =(item: BaseItem)=> {
+    addItem(item)
+  }
 
   return (
     <Wrapper>
@@ -63,7 +69,7 @@ export  const  HomePage=()=> {
       </Tabs>
       <Grid>
         {mockItems.map((p) => (
-          <ProductCard  key={p.id} {...p} onClick={(id)=>router.push(`items/${id}`)} />
+          <ProductCard addToCard={addToCard}  key={p.id} {...p} onClick={(id)=>router.push(`items/${id}`)} />
         ))}
       </Grid>
       <TabBar />

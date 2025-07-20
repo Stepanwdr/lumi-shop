@@ -13,6 +13,8 @@ export const mockItems: BaseItem[] = [
     ],
     weightKg: 0.5,
     inStock: true,
+    rating:4,
+    discounted:20,
     createdAt: '2024-07-01T09:00:00.000Z',
     updatedAt: '2024-07-19T15:30:00.000Z'
   },
@@ -27,14 +29,17 @@ export const mockItems: BaseItem[] = [
     ],
     weightKg: 0.8,
     inStock: true,
+    discounted:20,
     createdAt: '2024-07-05T11:20:00.000Z',
-    updatedAt: '2024-07-19T13:45:00.000Z'
+    updatedAt: '2024-07-19T13:45:00.000Z',
+    rating:4
   },
 
   {
     id: 'c2d9e5a6-1b4f-4c8a-9b12-3456789abcdf',
     name: 'Набор детских фломастеров "Rainbow"',
     category: 'kids',
+    discounted:20,
     description: '24 ярких цвета, водорастворимые, безопасные для детей от 3 лет.',
     price: { amount: 6500, currency: 'AMD' },
     images: [
@@ -42,6 +47,7 @@ export const mockItems: BaseItem[] = [
     ],
     weightKg: 0.15,
     inStock: false,
+    rating:5,
     createdAt: '2024-06-25T08:10:00.000Z',
     updatedAt: '2024-07-18T20:00:00.000Z'
   },
@@ -50,6 +56,7 @@ export const mockItems: BaseItem[] = [
     id: 'd3e0f7b8-5a9c-4d7e-8c23-456789abcdef',
     name: 'Эфирное масло лаванды',
     category: 'beauty',
+    discounted:20,
     description: '100% натуральное эфирное масло для ароматерапии и ухода за кожей.',
     price: { amount: 3400, currency: 'AMD' },
     images: [
@@ -57,6 +64,7 @@ export const mockItems: BaseItem[] = [
     ],
     weightKg: 0.05,
     inStock: true,
+    rating:5,
     createdAt: '2024-07-10T14:00:00.000Z',
     updatedAt: '2024-07-19T10:15:00.000Z'
   },
@@ -65,6 +73,7 @@ export const mockItems: BaseItem[] = [
     id: 'e4f1a8c9-6b0d-4e8f-9d34-567890abcdef',
     name: 'Беспроводные наушники "SoundWave"',
     category: 'electronics',
+    discounted:35,
     description: 'TWS-наушники с активным шумоподавлением и 30 часами автономной работы.',
     price: { amount: 3600, currency: 'AMD' },
     images: [
@@ -72,6 +81,7 @@ export const mockItems: BaseItem[] = [
     ],
     weightKg: 0.12,
     inStock: true,
+    rating:2,
     createdAt: '2024-07-15T16:30:00.000Z',
     updatedAt: '2024-07-19T09:00:00.000Z'
   },
@@ -87,6 +97,8 @@ export const mockItems: BaseItem[] = [
     ],
     weightKg: 1.0,
     inStock: true,
+    discounted:15,
+    rating:4,
     createdAt: '2024-07-12T12:00:00.000Z',
     updatedAt: '2024-07-19T11:45:00.000Z'
   },
@@ -102,6 +114,8 @@ export const mockItems: BaseItem[] = [
     ],
     weightKg: 0.25,
     inStock: true,
+    rating: 5,
+    discounted:30,
     createdAt: '2024-07-08T07:30:00.000Z',
     updatedAt: '2024-07-19T14:20:00.000Z'
   }
