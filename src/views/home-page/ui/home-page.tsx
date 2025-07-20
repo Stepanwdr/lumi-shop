@@ -99,7 +99,7 @@ const Tabs =styled.div`
   padding-left: 0;
   align-items: center;    
   gap: .5rem;
-  margin-left: 1rem;
+  margin: 0 1rem;
   overflow-x: auto;
   scrollbar-width: none;
 
