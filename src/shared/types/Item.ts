@@ -19,7 +19,6 @@ export type CATEGORIES =
   'handmade'
 
 
-
 // ------------------ 2. Общие сущности (могут быть у любого товара) ------------------
 export interface Price {
   amount: number;      // 149.99
@@ -43,19 +42,3 @@ export interface BaseItem {
   createdAt: ISODate;
   updatedAt: ISODate;
 }
-
-// ------------------ 5. Пример использования ------------------
-const Item: BaseItem = {
-  id: 'f47ac10b-58cc-4372-a567-0e02b2c3d479',
-  name: 'Wieldberry Premium',
-  category: 'beauty',
-  description: 'Hand-picked wild berries from Altai mountains',
-  price: { amount: 299.99, currency: 'AMD' },
-  images: [
-    { url: 'https://cdn.site.com/wb/premium.jpg', alt: 'Juicy dark-blue wieldberry' }
-  ],
-  weightKg: 0.5,
-  inStock: true,
-  createdAt: '2024-07-19T10:00:00.000Z',
-  updatedAt: '2024-07-19T10:00:00.000Z',
-};

@@ -17,6 +17,7 @@ const Nav = styled.nav`
   border-top: 1px solid var(--color-border);
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
+  z-index: 2;
 `;
 
 const Tab = styled.button<{ $active?: boolean }>`

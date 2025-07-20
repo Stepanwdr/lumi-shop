@@ -1,7 +1,10 @@
+"use client"
+
 import styled from 'styled-components';
 import { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { BaseItem } from '@/shared/types/Item';
+import {X} from "lucide-react";
 
 interface Props {
   product: BaseItem | null;
@@ -40,13 +43,12 @@ export const ProductStoryPreview: FC<Props> = ({ product, onClose }) => {
   return (
     <Overlay onClick={onClose}>
       <StoryCard onClick={(e) => e.stopPropagation()}>
-        {/* Прогресс-бар */}
         <ProgressBar>
           <Progress fill={progress} />
         </ProgressBar>
 
         <StoryImage
-          src={'/stories/story_1.png'}
+          src={product?.images?.[0]?.url}
           alt={product.name}
           layout="fill"
           objectFit="cover"
@@ -55,7 +57,9 @@ export const ProductStoryPreview: FC<Props> = ({ product, onClose }) => {
         <BottomBar>
           <Title>{product.name}</Title>
           <Price>{product.price.amount.toLocaleString('ru-RU')} ₽</Price>
+
         </BottomBar>
+        <X className={'close-story'} color={'white'} onClick={onClose} />
       </StoryCard>
     </Overlay>
   );
@@ -100,6 +104,13 @@ const Overlay = styled.div`
   cursor: pointer;
     height: 100%;
     padding: 20px;
+    
+    .close-story {
+        position: absolute;
+        top:20px;
+        right: 20px;
+        cursor:pointer;
+    }
 `;
 
 const StoryCard = styled.div`
@@ -112,6 +123,7 @@ const StoryCard = styled.div`
   overflow: hidden;
   cursor: default;
     height: 100%;
+
 `;
 
 /* --- прогресс --- */

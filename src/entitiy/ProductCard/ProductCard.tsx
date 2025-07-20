@@ -10,11 +10,12 @@ type Props = {
 } & BaseItem;
 
  const ProductCard=({  onClick,...item }: Props)=> {
+
   return (
     <Card onClick={()=>onClick(+item.id)}>
       <Heart color={'var(--color-primary)'} fill={'white'} className={'favourite-icon'} />
       <ImgWrapper>
-        <Image src={item.images[0].url.replace('.','')} alt={item.images[0].alt || ''} fill style={{ objectFit: 'cover' }} />
+        <Image src={item.images[0].url} alt={item.images[0].alt || ''} fill style={{ objectFit: 'cover' }} />
       </ImgWrapper>
       <Content>
         <Price>{item.price.amount} {item.price.currency}</Price>
@@ -51,7 +52,7 @@ const Card = styled.article`
         position: absolute;
         right: 15px;
         top: 15px;
-        z-index: 10;
+        z-index: 1;
     }
 `;
 

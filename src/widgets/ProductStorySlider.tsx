@@ -18,7 +18,6 @@ export const ProductStorySlider: React.FC<Props> = ({setStoryItem}) => {
 
   return (
     <StoryWrapper>
-      <Title>New</Title>
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -52,7 +51,6 @@ const StoryWrapper = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
-    
     .swiper-wrapper {
      gap: 1rem;
     }
@@ -99,4 +97,3 @@ const CircularProgress = styled.div<{ $active: boolean }>`
   transition: background 3s linear;
 `;
 
-const Title =styled.h2``

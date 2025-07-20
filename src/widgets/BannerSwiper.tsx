@@ -40,7 +40,7 @@ const SlideLink = styled.a`
   width: 100%;
   height: 10rem;
   @media (min-width: 768px) {
-    height: 24rem;
+    height: 15rem;
   }
   border-radius: 1rem;
   overflow: hidden;
@@ -53,6 +53,7 @@ const Overlay = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-end;
   padding: 1.5rem;
   @media (min-width: 768px) {
     padding: 2.5rem;
