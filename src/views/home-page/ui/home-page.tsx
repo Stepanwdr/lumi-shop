@@ -14,7 +14,7 @@ import dynamic from "next/dynamic";
 interface TabProps {
   $active?: boolean;
 }
-export const mockCategories: CATEGORIES[] | 'All' = [
+export const mockCategories: CATEGORIES[] | 'all' = [
   'women',
   'men',
   'kids',
@@ -37,7 +37,7 @@ export  const  HomePage=()=> {
 
   const [storyItem,setStoryItem]=useState<BaseItem | null>( null);
   const [activeTab, setActiveTab] = useState('all');
-  const [activeCategory, setActiveCategory] = useState<CATEGORIES | 'All'>('women');
+  const [activeCategory, setActiveCategory] = useState<CATEGORIES | 'all'>('all');
 
   return (
     <Wrapper>
@@ -46,8 +46,8 @@ export  const  HomePage=()=> {
       <ProductStorySlider setStoryItem={setStoryItem}/>
       <Tabs>
         <Tab
-          $active={activeCategory === 'All'}
-          onClick={() => setActiveCategory('All')}
+          $active={activeCategory === 'all'}
+          onClick={() => setActiveCategory('all')}
         >
          All
         </Tab>
@@ -119,6 +119,6 @@ const Tab = styled.div<TabProps>`
     cursor: pointer;
     text-transform: capitalize;
     &:hover {
-        background: ${({ $active }) => ($active ? '#111' : '#f0f0f0')};
+        background: ${({ $active }) => ($active ? 'var(--color-primary)' : '#f0f0f0')};
     }
 `;
