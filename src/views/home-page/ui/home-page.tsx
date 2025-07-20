@@ -75,7 +75,7 @@ export  const  HomePage=()=> {
 const Wrapper =styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
 ;
 `
 const Grid = styled.div`
@@ -102,7 +102,6 @@ const Tabs =styled.div`
   margin: 0 1rem;
   overflow-x: auto;
   scrollbar-width: none;
-
   &::-webkit-scrollbar {
         display: none;
     }
