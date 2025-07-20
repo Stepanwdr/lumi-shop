@@ -32,6 +32,7 @@ const Wrapper = styled.section`
   padding: 0 1rem;
   height: 100%;
   max-height: 10rem;
+  margin-bottom: 0.5rem;
 `;
 
 const SlideLink = styled.a`
