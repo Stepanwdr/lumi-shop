@@ -12,14 +12,14 @@ const slides = [
     id: 1,
     title: 'Лучшее предложение недели',
     text: 'Скидка 25 % на все кроссовки Nike',
-    img: 'https://picsum.photos/seed/nike/1200/400',
+    img: '/banner_1.jpg',
     link: '/offers/nike-sale',
   },
   {
     id: 2,
     title: 'Новинка',
     text: 'Только поступили новые смарт-часы',
-    img: 'https://picsum.photos/seed/watch/1200/400',
+    img: '/banner_1.jpg',
     link: '/catalog/smart-watches',
   },
 ];
@@ -31,14 +31,14 @@ const Wrapper = styled.section`
   margin: 0 auto;
   padding: 0 1rem;
   height: 100%;
-  max-height: 400px;
+  max-height: 10rem;
 `;
 
 const SlideLink = styled.a`
   position: relative;
   display: block;
   width: 100%;
-  height: 16rem;
+  height: 10rem;
   @media (min-width: 768px) {
     height: 24rem;
   }

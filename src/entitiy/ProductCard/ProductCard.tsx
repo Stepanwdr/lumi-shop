@@ -9,7 +9,7 @@ type Props = {
   onClick : (id: number) => void;
 } & BaseItem;
 
-export const ProductCard=({  onClick,...item }: Props)=> {
+ const ProductCard=({  onClick,...item }: Props)=> {
   return (
     <Card onClick={()=>onClick(+item.id)}>
       <Heart color={'var(--color-primary)'} fill={'white'} className={'favourite-icon'} />
@@ -27,6 +27,7 @@ export const ProductCard=({  onClick,...item }: Props)=> {
   );
 }
 
+export default ProductCard
 
 const Card = styled.article`
     width: 100%;
@@ -95,4 +96,5 @@ const AddButton =styled.button`
     font-weight: bold;
     color: white;
     gap: 1rem;
+    cursor: pointer;
 `

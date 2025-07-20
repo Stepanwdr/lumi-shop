@@ -6,22 +6,16 @@ import BannerSwiper from "@/widgets/BannerSwiper";
 import { useRouter } from "next/navigation";
 import { ProductStorySlider } from "@/widgets/ProductStorySlider";
 import {ProductStoryPreview} from "@/widgets/ProductStoryPreview";
-import {ProductCard} from "@/entitiy/ProductCard/ProductCard";
 import {mockItems} from "@/entitiy/ProductCard/mock";
 import {useState} from "react";
 import {BaseItem} from "@/shared/types/Item";
+import dynamic from "next/dynamic";
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  padding: 12px 16px 100px; /* space for TabBar */
-    
-  @media (min-width: 768px) {
-      grid-template-columns: repeat(6, 1fr);
 
-  }  
-`;
+const ProductCard = dynamic(() => import("@/entitiy/ProductCard/ProductCard"), {
+  loading: () => <div>Loading...</div>,
+  ssr: false, // если это клиентский компонент
+});
 
 export  const  HomePage=()=> {
   const router = useRouter()
@@ -49,3 +43,14 @@ const Wrapper =styled.div`
     gap: 1rem;
 ;
 `
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 12px 16px 100px; /* space for TabBar */
+    
+  @media (min-width: 768px) {
+      grid-template-columns: repeat(6, 1fr);
+
+  }  
+`;
