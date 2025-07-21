@@ -30,13 +30,13 @@ type Props = {
         <Price>{item.price.amount} {item.price.currency}</Price>
         <Discounted>{discountedAmount}</Discounted>
         <Title>{item.name}</Title>
-        <AddButton onClick={(ev)=>{
-          ev.stopPropagation()
-          addToCard(item)
-        }}>
-          <ShoppingCart width={15} /> Գնել
-        </AddButton>
       </Content>
+      <AddButton onClick={(ev)=>{
+        ev.stopPropagation()
+        addToCard(item)
+      }}>
+        <ShoppingCart width={15} /> Գնել
+      </AddButton>
     </Card>
   );
 }
@@ -111,18 +111,21 @@ const AddButton =styled.button`
     color: white;
     gap: 1rem;
     cursor: pointer;
+    transform: translateY(2px);
 `
 
 const Discounted =styled.p`
     position: relative;
     color: var(--color-text-muted);
-    &:after{
+    max-width: 80px;
+    width: fit-content;
+    &:after {
       content: '';
       height: 2px;
       background: var(--color-primary);
-      width: 50%;
+      width: 100%;
       position: absolute;
-      left: -5px;
+      left: -3px;
       bottom: 47%;
       transform: rotate(2deg)
   }

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 export const Input = styled.input`
   width: 100%;
-  height: 48px;
+  height: 30px;
   padding: 0 16px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   background: var(--color-bg-soft);
   color: var(--color-text);

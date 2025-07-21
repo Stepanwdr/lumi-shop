@@ -1,33 +1,21 @@
 "use client"
-
+import { useState } from "react";
 import styled from 'styled-components';
 import { TabBar } from "@/shared/ui/TabBar";
 import BannerSwiper from "@/widgets/BannerSwiper";
 import { useRouter } from "next/navigation";
 import { ProductStorySlider } from "@/widgets/ProductStorySlider";
-import {ProductStoryPreview} from "@/widgets/ProductStoryPreview";
-import {mockItems} from "@/entitiy/ProductCard/mock";
-import React, {useState} from "react";
-import {BaseItem, CATEGORIES} from "@/shared/types/Item";
+import { ProductStoryPreview } from "@/widgets/ProductStoryPreview";
+import { mockCategories, mockItems } from "@/entitiy/ProductCard/mock";
+
+import type {BaseItem, CATEGORIES} from "@/shared/types/Item";
 import dynamic from "next/dynamic";
-import {useBasketStore} from "@/features/ProductCard/hook/useBasketStore";
+import { useBasketStore } from "@/features/ProductCard/hook/useBasketStore";
 
 interface TabProps {
   $active?: boolean;
 }
-export const mockCategories: CATEGORIES[] | 'all' = [
-  'women',
-  'men',
-  'kids',
-  'shoes',
-  'home',
-  'beauty',
-  'electronics',
-  'sport',
-  'pets',
-  'health',
-  'handmade'
-];
+
 const ProductCard = dynamic(() => import("@/entitiy/ProductCard/ProductCard"), {
   loading: () => <div>Loading...</div>,
   ssr: false, // если это клиентский компонент
@@ -39,7 +27,7 @@ export  const  HomePage=()=> {
   const [storyItem,setStoryItem]=useState<BaseItem | null>( null);
   const [activeTab, setActiveTab] = useState('all');
   const [activeCategory, setActiveCategory] = useState<CATEGORIES | 'all'>('all');
-  const  {addItem}=useBasketStore()
+  const  { addItem }=useBasketStore()
 
   const addToCard =(item: BaseItem)=> {
     addItem(item)

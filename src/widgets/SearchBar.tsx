@@ -7,7 +7,7 @@ import { Input } from "@/shared/ui/Input";
 export function SearchBar() {
   return (
     <Wrapper>
-      <Icon size={20} />
+      <Icon size={16} />
       <StyledInput placeholder="Искать в LuMi" />
     </Wrapper>
   );

@@ -1,4 +1,4 @@
-import {BaseItem} from "@/shared/types/Item";
+import {BaseItem, CATEGORIES} from "@/shared/types/Item";
 
 export const mockItems: BaseItem[] = [
   {
@@ -6,7 +6,7 @@ export const mockItems: BaseItem[] = [
     name: 'Женский свитшот "Soft Cloud"',
     category: 'women',
     description: 'Уютный свитшот из органического хлопка с минималистичным дизайном.',
-    price: { amount: 3490, currency: 'AMD' },
+    price: { amount: 3490, currency: '֏' },
     images: [
       { url: '/stories/story_1.png', alt: 'Женский свитшот' },
       { url: 'https://cdn.site.com/wb/premium.jpg', alt: 'Деталь свитшота' }
@@ -23,7 +23,7 @@ export const mockItems: BaseItem[] = [
     name: 'Кроссовки мужские "Urban Runner"',
     category: 'shoes',
     description: 'Лёгкие кроссовки для бега и повседневной носки. Дышащий верх и амортизация.',
-    price: { amount: 5500, currency: 'AMD' },
+    price: { amount: 5500, currency: '֏' },
     images: [
       { url: '/stories/story_2.png', alt: 'Кроссовки Urban Runner' }
     ],
@@ -41,7 +41,7 @@ export const mockItems: BaseItem[] = [
     category: 'kids',
     discounted:20,
     description: '24 ярких цвета, водорастворимые, безопасные для детей от 3 лет.',
-    price: { amount: 6500, currency: 'AMD' },
+    price: { amount: 6500, currency: '֏' },
     images: [
       { url: '/stories/story_3.png', alt: 'Фломастеры Rainbow' }
     ],
@@ -58,7 +58,7 @@ export const mockItems: BaseItem[] = [
     category: 'beauty',
     discounted:20,
     description: '100% натуральное эфирное масло для ароматерапии и ухода за кожей.',
-    price: { amount: 3400, currency: 'AMD' },
+    price: { amount: 3400, currency: '֏' },
     images: [
       { url: '/stories/story_4.png', alt: 'Флакон эфирного масла' }
     ],
@@ -75,7 +75,7 @@ export const mockItems: BaseItem[] = [
     category: 'electronics',
     discounted:35,
     description: 'TWS-наушники с активным шумоподавлением и 30 часами автономной работы.',
-    price: { amount: 3600, currency: 'AMD' },
+    price: { amount: 3600, currency: '֏' },
     images: [
       { url: '/stories/story_5.png', alt: 'Наушники SoundWave' }
     ],
@@ -91,7 +91,7 @@ export const mockItems: BaseItem[] = [
     name: 'Йога-мат "EcoFlex"',
     category: 'sport',
     description: 'Профессиональный коврик для йоги из TPE-материала, 6 мм толщиной.',
-    price: { amount: 4200, currency: 'AMD' },
+    price: { amount: 4200, currency: '֏' },
     images: [
       { url: '/stories/story_6.png', alt: 'Йога-мат' }
     ],
@@ -108,7 +108,7 @@ export const mockItems: BaseItem[] = [
     name: 'Органическая варенье из черники',
     category: 'handmade',
     description: 'Ручная работа, без сахара, 250 гр. Приготовлено в Алтайском крае.',
-    price: { amount: 3500, currency: 'AMD' },
+    price: { amount: 3500, currency: '֏' },
     images: [
       { url: '/stories/story_7.png', alt: 'Банка варенья' }
     ],
@@ -119,4 +119,17 @@ export const mockItems: BaseItem[] = [
     createdAt: '2024-07-08T07:30:00.000Z',
     updatedAt: '2024-07-19T14:20:00.000Z'
   }
+];
+
+export const mockCategories: CATEGORIES[] | ['all'] = [
+  'women',
+  'men',
+  'kids',
+  'shoes',
+  'home',
+  'beauty',
+  'electronics',
+  'sport',
+  'health',
+  'handmade'
 ];

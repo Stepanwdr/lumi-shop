@@ -1,7 +1,7 @@
 // ------------------ 1. Базовые примитивы ------------------
 export type UUID = string;           // UUID v4
 export type ISODate = string;        // 2024-12-31T23:59:59.999Z
-export type Currency = 'USD' | 'EUR' | 'AMD';
+export type Currency = 'USD' | 'EUR' | '֏';
 
 
 // 1. Верхнеуровневые категории Wildberries

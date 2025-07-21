@@ -4,48 +4,6 @@ import { Home, Search, ShoppingCart, User } from 'lucide-react';
 import { useRouter, usePathname } from 'next/navigation';
 import {useBasketStore} from "@/features/ProductCard/hook/useBasketStore";
 
-const Nav = styled.nav`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background: rgba(var(--color-bg), 0.8);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid var(--color-border);
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
-  z-index: 2;
-`;
-
-const Tab = styled.button<{ $active?: boolean }>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  background: none;
-  border: none;
-  color: ${(p) => (p.$active ? 'var(--color-primary)' : 'var(--color-text-muted)')};
-  transition: color 0.2s;
-    position: relative;
-`;
-
-const Count =styled.span`
-background: var(--color-primary);
-color:white;
- border-radius: 40%;
-  min-width: 1rem;
-  min-height: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: -.5rem;
-    font-size: .75rem;
-`
 
 const tabs = [
   { icon: Home, label: 'Home', path: '/' },
@@ -72,6 +30,57 @@ export function TabBar() {
           {label ==='Cart' && !!items.length && <Count>{items.length}</Count>}
         </Tab>
       ))}
+      <BlurredBg/>
     </Nav>
   );
 }
+
+const Nav = styled.nav`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-image: url("/navBg.png");
+  background-size: cover;
+  background-position-y: -6px;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--color-border);
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  z-index: 3;
+`;
+
+const Tab = styled.button<{ $active?: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: ${(p) => (p.$active ? 'var(--color-primary)' : 'white')};
+  transition: color 0.2s;
+    position: relative;
+`;
+
+const Count =styled.span`
+background: var(--color-primary);
+color:white;
+ border-radius: 40%;
+  min-width: 1rem;
+  min-height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -0.5rem;
+    font-size: .75rem;
+
+`
+const BlurredBg =styled.div`
+    
+`
